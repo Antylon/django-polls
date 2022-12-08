@@ -1,4 +1,4 @@
-# Reproduce AppMapp error in Django
+# Reproduce
 
 Setup
 
@@ -10,24 +10,8 @@ Setup
 
 -------------
 
-Trying to run tests the Django way
+## Errors with self.subTest
 
-1. run `APPMAP=true python manage.py test`
-2. Open the Appmap extension in VS code and note that there are only `record_requests` in APPMAPS
-
--------------
-
-How about running tests with unittest instead of Django?
-
-1. run `APPMAP=true python -m unittest -v polls.tests`
-2. Note the error `django.core.exceptions.AppRegistryNotReady: Apps aren't loaded yet.`
-
--------------
-
-How about using appmap.unittest.TestCase?
-
-1. Switch to branch `appmap-testcase`
-2. run `APPMAP=true python manage.py test`
-3. Note the error `AttributeError: type object '_FailedTest' has no attribute 'tests'`
-4. run `APPMAP=true python -m unittest -v polls.tests`
-5. Note same error
+1. Switch to branch `with-subtests`
+2. run `APPMAP=true python manage.py test polls.tests.QuestionModelTests`
+3. Note the error `AttributeError: type object '_SubTest' has no attribute 'test_was_published_recently_with_subtests [in the future]'`
