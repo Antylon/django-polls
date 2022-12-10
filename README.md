@@ -4,9 +4,10 @@ Setup
 
 1. Download and setup
     1. pipenv install django
-    2. pipenv install appmap
-    3. python manage.py migrate
-    4. pipenv shell
+    1. pipenv install django
+    1. pipenv install appmap
+    1. pipenv shell
+    1. python manage.py migrate
 
 -------------
 
